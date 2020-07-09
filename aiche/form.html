@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  	<style type="text/css">
+
+  		*{
+  			margin: 0;
+		    padding: 0;
+		    box-sizing: border-box;
+  		}
+
+      body{
+        background-color:#000045;
+      }
+  		input{
+  			display: block;
+  			margin-right: auto;
+  			margin-left: auto;
+  			margin-bottom: 30px;
+  			text-align: center;
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 30%
+  		}
+
+      button{
+        width: 20%;    
+        margin-bottom: 30px;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 10px;
+      }
+
+
+
+  		form{
+  			text-align: center;
+        width: 60%;
+        position: absolute;
+        left: 20%;
+        border: 4px solid black ;
+        background-color: #364569;
+        opacity: 0.9;
+        border-radius: 50px;
+  		}
+
+      h1{
+        margin-right: auto;
+        margin-left: auto;
+        color: white;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+      }
+
+      label{
+        color: white;
+      }
+  	</style>
+  	
+</head>
+<body>
+  <header>
+    <h1>TEST FORM</h1>
+  </header>
+
+	<form>
+		<label for="name">Name:</label>
+		<input type="text" name="name" placeholder="Name" id="name">
+		<label for="phone">Phone Number:</label>
+		<input type="text" name="phone" placeholder="Phone Number" id="phone">
+		<label for="roll">Roll Number:</label>
+		<input type="text" name="roll" placeholder="Roll Number" id="roll">
+		<label for="email">E-mail:</label>
+		<input type="text" name="email" placeholder="Name" id="email">
+		<label for="password">Password:</label>
+		<input type="password" name="password" placeholder="Name" id="password">
+    <button class="butn" type="button" name="submit" value="SUBMIT" onclick="check()">START TEST</button>
+	</form>
+  <script type="text/javascript">
+    function check(){
+
+
+      a=document.getElementById('name').value
+      b=document.getElementById('phone').value
+      c=document.getElementById('roll').value
+      d=document.getElementById('email').value
+      e=document.getElementById('password').value
+
+      if(a == '' || b== '' || d== '' || e== '' || c== '')
+        swal("Fill all fields")
+      else if(b.length!=10)
+        swal("wrong number")
+      else if(b.match(/[a-z]+/))
+        swal("wrong number")
+      else if(b.match(/[A-Z]+/))
+        swal("wrong number")
+      else if(!(d.match(/[@]+/)) || !d.match(/[.com]/))
+        swal("email incorrect")    
+      else if(e.length<8)
+        swal("password minimum length 8")
+      else
+        window.location.href = 'test.html';
+    }  
+  </script>
+</body>
+
+</html>
